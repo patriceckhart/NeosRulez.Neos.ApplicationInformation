@@ -1,0 +1,26 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        NeosRulez.Neos.ApplicationInformation:
+          position: 'start'
+    security:
+      authentication:
+        providers:
+          'Neos.Neos:Backend':
+            requestPatterns:
+              'NeosRulez.Neos.ApplicationInformation:Commands':
+                pattern: ControllerObjectName
+                patternOptions:
+                  controllerObjectNamePattern: 'NeosRulez\Neos\ApplicationInformation\Controller\.*'
+  Neos:
+    Ui:
+      resources:
+        stylesheets:
+          'NeosRulez.Neos.ApplicationInformation':
+            resource: '${"resource://NeosRulez.Neos.ApplicationInformation/Public/Plugin.css"}'
+        javascript:
+          'NeosRulez.Neos.ApplicationInformation':
+            resource: '${"resource://NeosRulez.Neos.ApplicationInformation/Public/Plugin.js"}'
+      frontendConfiguration:
+        'NeosRulez.Neos.ApplicationInformation:enabled': '${Security.hasRole("Neos.Neos:Administrator") ? true : false}'

@@ -1,0 +1,10 @@
+privilegeTargets:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    'NeosRulez.Neos.ApplicationInformation:AppInfo':
+      matcher: 'method(NeosRulez\Neos\ApplicationInformation\Controller\AppInfoController->.*Action())'
+roles:
+  'Neos.Neos:AbstractEditor':
+    privileges:
+      -
+        privilegeTarget: 'NeosRulez.Neos.ApplicationInformation:AppInfo'
+        permission: GRANT

@@ -1,0 +1,9 @@
+-
+  name: 'App info'
+  uriPattern: 'neos/appinfo'
+  defaults:
+    '@controller': 'AppInfo'
+    '@package': 'NeosRulez.Neos.ApplicationInformation'
+    '@action': 'index'
+    '@format': 'json'
+  appendExceedingArguments: true
